@@ -43,3 +43,16 @@ const reservas: Reserva[] = [
     completadaConExito: false,
     },
 ];
+
+const todasCompletadas = reservas.every(
+    (reserva : Reserva): boolean => reserva.completadaConExito
+);
+
+const reservasConDescuento : Reserva []= reservas.map(
+   (reserva : Reserva) =>  {
+    return {
+        ...reserva,
+        precio: reserva.precio * 0.9
+    }
+   }
+);
